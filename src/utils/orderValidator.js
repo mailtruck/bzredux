@@ -3,7 +3,7 @@ import { BUY, SELL, ALERT } from '../constants'
 import findIndex from 'lodash/findIndex'
 import { v4 } from 'node-uuid'
 
-export default function orderValidator(portfolio, action){
+export function orderValidator(portfolio, action){
   if (action.type !== types.SEND_ORDER) {
     return action
   }

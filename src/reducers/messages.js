@@ -1,9 +1,8 @@
 import * as types from '../actions/types'
-import { SUCCESS, ALERT } from '../constants'
 import findIndex from 'lodash/findIndex'
 
 
-export default function messages(state = [], action = {}) {
+export default function messages(state = [], action) {
   switch (action.type) {
     case types.SET_MESSAGE:
 

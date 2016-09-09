@@ -1,4 +1,4 @@
-import orderValidator from './orderValidator'
+import { orderValidator } from './orderValidator'
 import { BUY, SELL } from '../constants'
 import * as types from '../actions/types'
 
