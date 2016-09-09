@@ -1,5 +1,6 @@
 import positions from './positions'
 import * as types from '../actions/types'
+import { BUY, SELL } from '../constants'
 
 describe('positions reducer', () => {
   it('should handle initial state', () => {
@@ -26,7 +27,7 @@ describe('positions reducer', () => {
         {
           type: types.SEND_ORDER,
           order: {
-            type: 'SELL',
+            type: SELL,
             symbol: 'AAPL',
             name: 'Apple',
             bidPrice:100,
@@ -52,7 +53,7 @@ describe('positions reducer', () => {
         {
           type: types.SEND_ORDER,
           order: {
-            type: 'SELL',
+            type: SELL,
             symbol: 'F',
             name: 'Ford Motor',
             bidPrice:1,
@@ -82,7 +83,7 @@ describe('positions reducer', () => {
           {
             type: types.SEND_ORDER,
             order: {
-              type: 'SELL',
+              type: SELL,
               symbol: 'AAPL',
               name: 'Apple',
               bidPrice:100,
@@ -109,7 +110,7 @@ describe('positions reducer', () => {
           {
             type: types.SEND_ORDER,
             order: {
-              type: 'BUY',
+              type: BUY,
               symbol: 'AAPL',
               name: 'Apple',
               bidPrice:100,
@@ -137,7 +138,7 @@ describe('positions reducer', () => {
           {
             type: types.SEND_ORDER,
             order: {
-              type: 'BUY',
+              type: BUY,
               symbol: 'F',
               name: 'Ford Motor',
               bidPrice:1,
@@ -164,7 +165,7 @@ describe('positions reducer', () => {
           {
             type: types.SEND_ORDER,
             order: {
-              type: 'BUY',
+              type: BUY,
               symbol: 'F',
               name: 'Ford Motor',
               bidPrice:1,
