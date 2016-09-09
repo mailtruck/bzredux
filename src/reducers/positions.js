@@ -18,7 +18,7 @@ export default function positions(state = initialState, action) {
 
   switch (action.type) {
     case SEND_ORDER:
-      const { type, symbol, name, bidPrice, askPrice, quantity } = action.order
+      const { type, symbol, name, askPrice, quantity } = action.order
       const index = findIndex(state, {symbol})
       console.log('index', index)
 

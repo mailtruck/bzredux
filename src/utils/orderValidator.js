@@ -23,7 +23,6 @@ export default function orderValidator(portfolio, action){
       } else {
         return action
       }
-      return action
     case SELL:
       const index = findIndex(portfolio.positions, {symbol})
 
