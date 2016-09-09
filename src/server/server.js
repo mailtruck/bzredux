@@ -19,10 +19,19 @@ app.use(express.static(path.join(__dirname, 'public')))
 
 app.get('/api/*', function (req, res) {
   console.log(req.url)
-  var ticker = req.url.split('/').reverse()[0]
-  console.log(ticker)
-  axios.get('http://data.benzinga.com/rest/richquoteDelayed?symbols='+ticker)
-  .then(response=>res.json(response.data)).catch((err)=>console.log(err))
+  var symbol = req.url.split('/').reverse()[0].toUpperCase()
+  console.log(symbol)
+  axios.get('http://data.benzinga.com/rest/richquoteDelayed?symbols='+symbol)
+  .then(response=>{
+    var data = response.data[symbol]
+    console.log(data.name)
+    res.json({
+      symbol: data.symbol,
+      name: data.name,
+      bidPrice: data.bidPrice,
+      askPrice: data.askPrice
+    }
+  )}).catch((err)=>console.log(err))
 })
 app.get('*', function (req, res) {
   res.sendFile(path.join(__dirname, 'public', 'index.html'))

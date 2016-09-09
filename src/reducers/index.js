@@ -1,9 +1,9 @@
 import { combineReducers } from 'redux'
-import positions from './positions'
+import portfolio from './portfolio'
 import quotes from './quotes'
 
 const rootReducer = combineReducers({
-  positions,
+  portfolio,
   quotes
 })
 

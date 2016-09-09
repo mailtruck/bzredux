@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import './App.css'
 import { connect } from 'react-redux'
+import OrderButton from '../components/OrderButton'
 
 import { getQuote } from '../actions/quoteActions'
 
@@ -18,7 +19,14 @@ class App extends Component {
         <div className="App-header">
           <h2>Welcome to React</h2>
         </div>
-        <button onClick={()=>this.getQuote('AAPL')}>get quote</button>
+        <button onClick={()=>this.getQuote('F')}>get quote</button>
+        {JSON.stringify(this.props.quotes)}
+
+        <OrderButton
+          type="BUY"
+          quantity={100}
+        />
+
       </div>
     );
   }
