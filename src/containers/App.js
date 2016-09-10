@@ -20,11 +20,11 @@ class App extends Component {
           <h2>Welcome to React</h2>
         </div>
         <button onClick={()=>this.getQuote('F')}>get quote</button>
-        {JSON.stringify(this.props.quotes)}
+        {JSON.stringify(this.props.quote)}
 
         <OrderButton
           type="BUY"
-          quantity={100}
+          quantity={100000000}
         />
 
       </div>
