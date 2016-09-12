@@ -1,0 +1,14 @@
+.portfolio-list {
+  width: 66%;
+  float: left;
+  padding: .7rem;
+}
+
+.portfolio-list th {
+  font-size: .7rem;
+  text-align: left;
+}
+
+.portfolio-list button {
+  font-size: .7rem;
+}

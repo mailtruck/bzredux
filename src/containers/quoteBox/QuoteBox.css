@@ -1,8 +1,10 @@
 .quote-box {
   border: solid 2px #ccc;
-  padding:.7rem;
-  width:33%;
+  padding: .7rem;
+  width: 33%;
+  float :left;
   text-align: center;
+  box-sizing: border-box;
 }
 
 .quote-box h1 {
