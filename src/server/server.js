@@ -22,16 +22,25 @@ app.get('/api/*', function (req, res) {
   var symbol = req.url.split('/').reverse()[0].toUpperCase()
   console.log(symbol)
   axios.get('http://data.benzinga.com/rest/richquoteDelayed?symbols='+symbol)
-  .then(response=>{
+  .then(response=> {
     var data = response.data[symbol]
-    console.log(data.name)
-    res.json({
-      symbol: data.symbol,
-      name: data.name,
-      bidPrice: data.bidPrice,
-      askPrice: data.askPrice
+
+    if (data) {
+      console.log(data.name)
+      res.json({
+        symbol: data.symbol,
+        name: data.name,
+        bidPrice: data.bidPrice,
+        askPrice: data.askPrice
+      })
+    } else {
+      console.log(response.data)
+      res.json({
+        error: 'invalid symbol'
+      })
     }
-  )}).catch((err)=>console.log(err))
+
+  }).catch((err)=>console.log(err))
 })
 app.get('*', function (req, res) {
   res.sendFile(path.join(__dirname, 'public', 'index.html'))

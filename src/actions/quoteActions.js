@@ -4,7 +4,11 @@ import { SET_QUOTE } from './types'
 export function getQuote(symbol) {
   return dispatch => {
     return axios.get('/api/'+ symbol).then(res=> {
-      dispatch(setQuote(res.data))
+      if (res.data.error){
+        alert()
+      } else {
+        dispatch(setQuote(res.data))
+      }
     })
   }
 }
