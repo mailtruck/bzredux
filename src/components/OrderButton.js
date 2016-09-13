@@ -21,6 +21,7 @@ class OrderButton extends React.Component{
       <Button
         text={type}
         clickHandler={this.clickHandler(type, quote, quantity, sendOrder)}
+        disabled={!quantity }
       />
     )
   }

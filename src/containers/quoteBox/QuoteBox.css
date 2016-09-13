@@ -1,5 +1,7 @@
 .quote-box {
-  border: solid 2px #ccc;
+  border-top: solid 4px #ccc;
+  border-bottom: solid 2px #ccc;
+  background:#efefef;
   padding: .7rem;
   width: 33%;
   float :left;
@@ -18,7 +20,31 @@
 }
 
 .quote-box input {
-  width: 100%;
+  width: 80%;
+  margin: 0 10%;
   text-align: center;
   margin-top: .7rem;
+}
+
+@media (max-width: 475px) {
+  .quote-box {
+    width: 100%;
+  }
+  .quote-box button {
+    font-size: 1rem;
+    padding:.7rem 1.5rem;
+  }
+
+  .quote-box input {
+    font-size: 1.5rem;
+  }
+
+  .quote-box h3 {
+    font-size: 1.5rem;
+    margin: 1rem 0;
+  }
+
+  .quote-box strong {
+    font-size: 1.3rem;
+  }
 }

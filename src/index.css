@@ -3,3 +3,23 @@ body {
   padding: .5rem;
   font-family: sans-serif;
 }
+
+button {
+  border: solid 2px #777;
+  color: #333;
+  background: #f3f3f3;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+button:hover {
+  border-color: #333;
+  background: #333;
+  color:#fff;
+}
+
+button:active {
+  border: solid 2px #777;
+  color: #333;
+  background: #f3f3f3;
+}

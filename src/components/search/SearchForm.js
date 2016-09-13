@@ -1,4 +1,5 @@
 import React from 'react'
+import './SearchForm.css'
 
 class SearchForm extends React.Component {
 
@@ -35,14 +36,17 @@ class SearchForm extends React.Component {
   render() {
     const { symbol } = this.state
     return (
-      <div>
+      <div className="search-form">
         <form onSubmit={(e)=>this.onSubmit(e, symbol)}>
           <input
             value={symbol}
             type="search"
             name="symbol"
+            min={1}
             onChange={(e)=>this.onChange(e)}/>
-          <button type="submit">get quote</button>
+          <button
+            type="submit"
+            disabled={!symbol}>get quote</button>
         </form>
 
       </div>

@@ -1,0 +1,33 @@
+.middle-bar {
+  background: #efefef;
+  border-bottom: solid 2px #ccc;
+  border-top: solid 4px #ccc;
+  float: left;
+  clear: both;
+  width:100%;
+  margin: .7rem 0;
+  padding: 0.7rem;
+  box-sizing: border-box;
+  font-size:1.5rem;
+}
+
+.search-form {
+  float:left;
+  width: 50%
+}
+
+.search-form input {
+  width: 4rem;
+}
+
+.search-form input, .search-form button {
+  padding: .3rem;
+}
+
+.cash {
+  float:right;
+  line-height:2.3rem;
+  width: 50%;
+  box-sizing: border-box;
+  text-align: center;
+}

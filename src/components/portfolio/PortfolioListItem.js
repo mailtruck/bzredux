@@ -4,13 +4,15 @@ class PortfolioListItem extends React.Component {
 
   render() {
     const { name, symbol, purchasePrice, quantity } = this.props.position
+    const { getQuote } = this.props
     return(
-      <tr>
+      <tr
+        className="portfolio-list-item"
+        onClick={()=> getQuote(symbol)}>
         <td>{symbol}</td>
         <td>{name}</td>
         <td>{quantity}</td>
         <td>{purchasePrice}</td>
-        <td><button>view stock</button></td>
 
       </tr>
     )
@@ -18,7 +20,8 @@ class PortfolioListItem extends React.Component {
 }
 
 PortfolioListItem.propTypes = {
-  position: React.PropTypes.object.isRequired
+  position: React.PropTypes.object.isRequired,
+  getQuote: React.PropTypes.func.isRequired
 }
 
 export default PortfolioListItem

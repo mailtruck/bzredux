@@ -5,7 +5,7 @@ import './PortfolioList.css'
 class PortfolioList extends React.Component {
 
   render() {
-    const { positions } = this.props
+    const { positions, getQuote } = this.props
     return (
       <table className="portfolio-list">
         <tbody>
@@ -15,19 +15,20 @@ class PortfolioList extends React.Component {
             <th>quantity</th>
             <th>purchase price</th>
           </tr>
-          {this.positions(positions)}
+          {this.positions(positions, getQuote)}
         </tbody>
       </table>
     )
   }
 
-  positions(positions){
-    return positions.map(p => <PortfolioListItem position={p}/>)
+  positions(positions, getQuote){
+    return positions.map(p => <PortfolioListItem position={p} getQuote={getQuote}/>)
   }
 }
 
 PortfolioList.propTypes = {
-  positions: React.PropTypes.array.isRequired
+  positions: React.PropTypes.array.isRequired,
+  getQuote: React.PropTypes.func.isRequired
 }
 
 export default PortfolioList

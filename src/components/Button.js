@@ -3,9 +3,11 @@ import React from 'react';
 class Button extends React.Component{
 
   render(){
-    const { text, clickHandler } = this.props
+    const { text, clickHandler, disabled } = this.props
     return(
-      <button onClick={clickHandler}>
+      <button
+        disabled={disabled}
+        onClick={clickHandler}>
         {text}
       </button>
     )
@@ -14,7 +16,7 @@ class Button extends React.Component{
 
 Button.propTypes = {
   text: React.PropTypes.string.isRequired,
-  clickHandler: React.PropTypes.func.isRequired
+  clickHandler: React.PropTypes.func.isRequired,
+  disabled: React.PropTypes.bool
 }
-
 export default Button;
