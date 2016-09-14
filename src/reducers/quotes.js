@@ -1,12 +1,19 @@
-import { SET_QUOTE } from '../actions/types'
+import { SET_QUOTE, SET_LOADING } from '../actions/types'
+import { combineReducers } from 'redux'
 
 //   symbol: 'AAPL',
 //   name: 'Apple',
 //   bidPrice: 108.11,
 //   askPrice: 108.16
 
+const quotes = combineReducers({
+    quote,
+    loading
+})
 
-export default function quotes(state = {}, action) {
+
+
+function quote(state = {}, action) {
   switch (action.type) {
     case SET_QUOTE:
       return action.quote
@@ -15,3 +22,14 @@ export default function quotes(state = {}, action) {
       return state
   }
 }
+
+function loading(state = true, action) {
+  switch (action.type) {
+    case SET_LOADING:
+      return action.loading
+    default:
+      return state
+  }
+}
+
+export default quotes

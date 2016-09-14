@@ -13,8 +13,8 @@ class OrderButton extends React.Component{
           ...quote,
           quantity
         })
-
   }
+
   render(){
     const { type, quote, quantity, portfolio,  requestOrder} = this.props;
     return (
@@ -34,7 +34,7 @@ OrderButton.propTypes = {
 
 function mapStateToProps(state){
   return {
-    quote: state.quotes,
+    quote: state.quotes.quote,
     portfolio: state.portfolio
   }
 }

@@ -1,7 +1,7 @@
 import React from 'react';
 import OrderButton from '../OrderButton'
 import { BUY, SELL } from '../../constants'
-
+import decimalRounder from '../../utils/decimalRounder'
 import './QuotePane.css'
 
 class QuotePane extends React.Component{
@@ -11,7 +11,7 @@ class QuotePane extends React.Component{
     return(
       <div className="quote-pane">
         <strong>{type === BUY ? 'ask' : 'bid'}</strong>
-        <h3>{price}</h3>
+        <h3>{decimalRounder(price)}</h3>
         <OrderButton
           quantity={quantity}
           type={type}/>

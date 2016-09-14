@@ -2,24 +2,17 @@ import React from 'react'
 import { connect } from 'react-redux'
 import QuoteBox from './QuoteBox'
 import Loading from '../../components/loading/Loading'
-import { getQuote, setQuote } from '../../actions/quoteActions'
+import { getQuote, setQuote, setLoading } from '../../actions/quoteActions'
 
 class QuoteBoxWrapper extends React.Component{
-  constructor(props){
-    super(props)
-    this.state = {
-      isLoading: true
-    }
-  }
+
   componentDidMount(){
-    this.props.getQuote('AAPL').then(()=> {
-      this.setState({isLoading: false})
-    })
+    this.props.getQuote('AAPL')
   }
 
   render(){
     const { quote } = this.props
-    const { isLoading } = this.state
+    const { isLoading } = this.props
     return (
       <QuoteBox
         quote={quote}
@@ -30,14 +23,17 @@ class QuoteBoxWrapper extends React.Component{
 
 QuoteBoxWrapper.propTypes = {
   quote: React.PropTypes.object.isRequired,
+  isLoading: React.PropTypes.bool.isRequired,
   getQuote: React.PropTypes.func.isRequired,
-  setQuote: React.PropTypes.func.isRequired
+  setQuote: React.PropTypes.func.isRequired,
+  setLoading: React.PropTypes.func.isRequired
 }
 
 function mapStateToProps(state) {
   return {
-    quote: state.quotes
+    quote: state.quotes.quote,
+    isLoading: state.quotes.loading
   }
 }
 
-export default connect(mapStateToProps, { getQuote, setQuote })(QuoteBoxWrapper);
+export default connect(mapStateToProps, { getQuote, setQuote, setLoading })(QuoteBoxWrapper);

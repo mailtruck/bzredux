@@ -1,4 +1,5 @@
 import React from 'react'
+import decimalRounder from '../../utils/decimalRounder'
 
 class PortfolioListItem extends React.Component {
 
@@ -12,7 +13,7 @@ class PortfolioListItem extends React.Component {
         <td>{symbol}</td>
         <td>{name}</td>
         <td>{quantity}</td>
-        <td>{purchasePrice}</td>
+        <td>{decimalRounder(purchasePrice)}</td>
 
       </tr>
     )

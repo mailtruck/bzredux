@@ -11,7 +11,7 @@ class SearchFormWrapper extends React.Component {
 }
 
 SearchFormWrapper.propTypes = {
-  getQuote: React.PropTypes.func.isRequired
+  getQuote: React.PropTypes.func.isRequired,
 }
 
 export default connect(null, { getQuote })(SearchFormWrapper)
