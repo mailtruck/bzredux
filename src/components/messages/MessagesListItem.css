@@ -1,0 +1,38 @@
+.messages-list-item {
+  position: relative;
+  width: 100%;
+  background: #efefef;
+  text-align: center;
+  font-weight: bold;
+  padding: .5rem 1rem;
+  border-top: solid 4px #ccc;
+  box-sizing: border-box;
+  line-height: 1.5rem;
+}
+
+.messages-list-item.alert {
+  color: #e23;
+  border-color: #e23;
+}
+
+.messages-list-item button {
+  border: none;
+  font-size: 1.3rem;
+  line-height: 1.7rem;
+  position: absolute;
+  top: .1rem;
+  right: .3rem;
+  color: #777
+
+}
+
+.messages-list-item button:hover {
+  background: inherit;
+  color: #333;
+  font-size: 1.4rem;
+}
+
+.messages-list-item button:focus {
+  outline: none;
+  border: none;
+}

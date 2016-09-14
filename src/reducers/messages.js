@@ -5,7 +5,6 @@ import findIndex from 'lodash/findIndex'
 export default function messages(state = [], action) {
   switch (action.type) {
     case types.SET_MESSAGE:
-
       return [
         ...state,
         {
