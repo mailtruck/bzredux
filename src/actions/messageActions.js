@@ -1,9 +1,13 @@
 import { SET_MESSAGE, DELETE_MESSAGE } from './types'
+import { v4 } from 'node-uuid'
 
 export function setMessage(message) {
   return {
     type: SET_MESSAGE,
-    message
+    message: {
+      ...message,
+      id: v4()
+    }
   }
 }
 

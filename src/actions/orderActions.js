@@ -1,4 +1,7 @@
+import { setMessage } from './messageActions'
 import { SEND_ORDER } from './types'
+import { ALERT } from '../constants'
+import orderValidator from '../utils/orderValidator'
 
 /*
   order: {
@@ -10,6 +13,20 @@ import { SEND_ORDER } from './types'
     quantity
   }
 */
+
+export function requestOrder(portfolio, order){
+  const { error, isValid } = orderValidator(portfolio, order)
+  return dispatch => {
+    if (isValid) {
+      dispatch(sendOrder(order))
+    } else {
+      dispatch(setMessage({
+        type: ALERT,
+        text: error
+      }))
+    }
+  }
+}
 
 export function sendOrder(order) {
   return {

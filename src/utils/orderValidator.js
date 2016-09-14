@@ -1,45 +1,37 @@
-import * as types from '../actions/types'
 import { BUY, SELL, ALERT } from '../constants'
 import findIndex from 'lodash/findIndex'
-import { v4 } from 'node-uuid'
 
-export function orderValidator(portfolio, action){
-  if (action.type !== types.SEND_ORDER) {
-    return action
+
+function orderValidator(portfolio, order){
+  const { symbol, askPrice, quantity } = order
+  const valid = {
+    error: '',
+    isValid: true
   }
-  const { symbol, askPrice, quantity } = action.order
-
-  switch (action.order.type) {
+  switch (order.type) {
     case BUY:
       if (portfolio.cash < askPrice * quantity) {
         return {
-          type: types.SET_MESSAGE,
-          message: {
-            type: ALERT,
-            id: v4(),
-            text: 'You do not have enough cash for that order'
+            error: 'You do not have enough cash for that order',
+            isValid: false
           }
-        }
       } else {
-        return action
+        return valid
       }
     case SELL:
       const index = findIndex(portfolio.positions, {symbol})
 
       if (index === -1 || portfolio.positions[index].quantity < quantity) {
         return {
-          type: types.SET_MESSAGE,
-          message: {
-            type: ALERT,
-            id: v4(),
-            text: `You do not own enough shares of ${symbol} for that order`
+            error: `You do not own enough shares of ${symbol} for that order`,
+            isValid: false
           }
-        }
       } else {
-        return action
+        return valid
       }
     default:
-      return action
+      return valid
   }
-
 }
+
+export default orderValidator

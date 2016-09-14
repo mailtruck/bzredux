@@ -1,14 +1,14 @@
 import React from 'react'
 import { connect } from 'react-redux'
 
-import { sendOrder } from '../actions/orderActions'
+import { requestOrder } from '../actions/orderActions'
 import Button from './Button'
 
 class OrderButton extends React.Component{
 
-  clickHandler(type, quote, quantity, handler){
+  clickHandler(type, quote, quantity, portfolio, requestOrder){
         return () =>
-        handler({
+        requestOrder(portfolio, {
           type,
           ...quote,
           quantity
@@ -16,11 +16,11 @@ class OrderButton extends React.Component{
 
   }
   render(){
-    const { type, quote, quantity, sendOrder} = this.props;
+    const { type, quote, quantity, portfolio,  requestOrder} = this.props;
     return (
       <Button
         text={type}
-        clickHandler={this.clickHandler(type, quote, quantity, sendOrder)}
+        clickHandler={this.clickHandler(type, quote, quantity, portfolio, requestOrder)}
         disabled={!quantity }
       />
     )
@@ -34,8 +34,9 @@ OrderButton.propTypes = {
 
 function mapStateToProps(state){
   return {
-    quote: state.quotes
+    quote: state.quotes,
+    portfolio: state.portfolio
   }
 }
 
-export default connect(mapStateToProps, { sendOrder })(OrderButton);
+export default connect(mapStateToProps, { requestOrder })(OrderButton);

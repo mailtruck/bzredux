@@ -22,7 +22,7 @@ class PortfolioList extends React.Component {
   }
 
   positions(positions, getQuote){
-    return positions.map(p => <PortfolioListItem position={p} getQuote={getQuote}/>)
+    return positions.map(p => <PortfolioListItem position={p} getQuote={getQuote} key={p.symbol}/>)
   }
 }
 
