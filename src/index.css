@@ -23,3 +23,15 @@ button:active {
   color: #333;
   background: #f3f3f3;
 }
+
+button:disabled {
+  color:#ccc;
+  border-color:#ccc;
+}
+
+button:disabled:hover {
+  color: #fff;
+  border-color: #fff;
+  background:inherit;
+  cursor:not-allowed;
+}
