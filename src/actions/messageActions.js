@@ -1,4 +1,4 @@
-import { SET_MESSAGE, DELETE_MESSAGE } from './types'
+import { SET_MESSAGE, DELETE_MESSAGE } from '../constants'
 import { v4 } from 'node-uuid'
 
 export function setMessage(message) {

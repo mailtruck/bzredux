@@ -1,6 +1,5 @@
 import messages from './messages'
-import * as types from '../actions/types'
-import { SUCCESS, ALERT } from '../constants'
+import { SET_MESSAGE, DELETE_MESSAGE, SUCCESS, ALERT } from '../constants'
 
 describe('messages reducer', () => {
   it('should handle initial state', () => {
@@ -13,7 +12,7 @@ describe('messages reducer', () => {
 
     expect(
       messages([], {
-        type: types.SET_MESSAGE,
+        type: SET_MESSAGE,
         message: {
           type: SUCCESS,
           id: 0,
@@ -33,7 +32,7 @@ describe('messages reducer', () => {
             text: 'you set a message!'
           }
         ], {
-          type: types.SET_MESSAGE,
+          type: SET_MESSAGE,
           message: {
             type: ALERT,
             id: 1,
@@ -64,7 +63,7 @@ describe('messages reducer', () => {
           text: 'you set a message!'
         }],
         {
-          type: types.DELETE_MESSAGE,
+          type: DELETE_MESSAGE,
           id: 0,
         }
     )).toEqual([])
@@ -83,7 +82,7 @@ describe('messages reducer', () => {
           }
         ],
         {
-          type: types.DELETE_MESSAGE,
+          type: DELETE_MESSAGE,
           id: 1,
         })).toEqual([
           {

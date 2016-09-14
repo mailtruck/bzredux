@@ -1,4 +1,4 @@
-import { SEND_ORDER } from '../actions/types'
+import { SEND_ORDER } from '../constants'
 
 export default function cash(state = 100000, action) {
   switch (action.type) {

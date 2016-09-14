@@ -1,31 +1,7 @@
 import orderValidator from './orderValidator'
 import { BUY, SELL } from '../constants'
-import * as types from '../actions/types'
 
 describe('order validaton function checks order against portfolio for validity. if valid, returns object with isValid: true, error: "" if invalid, returns isValid: false and error as a string describing why it is invalid', () => {
-
-  // legacy test from initial middleware implementation of orderValidator
-  // it('should return a non SEND_ORDER action that it is passed ', () => {
-  //   const portfolio = {
-  //     cash: 100000,
-  //     positions: [{
-  //       name:"Apple",
-  //       symbol:"AAPL",
-  //       purchasePrice:123,
-  //       quantity:100
-  //     }]}
-  //     const action = {
-  //       type: types.SET_QUOTE,
-  //       quote: {
-  //         symbol: 'F',
-  //         name: 'Ford Motor',
-  //         bidPrice: 12.50,
-  //         askPrice: 12.75
-  //       }
-  //
-  //     }
-  //   expect(orderValidator(portfolio, action).isValid).toEqual(action)
-  // })
 
   it('should return object with .isValid === true with no error if cash in portfolio > order quantity * askPrice', () => {
     const portfolio = {

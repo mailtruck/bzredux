@@ -1,4 +1,4 @@
-import { BUY, SELL, ALERT } from '../constants'
+import { BUY, SELL } from '../constants'
 import findIndex from 'lodash/findIndex'
 
 

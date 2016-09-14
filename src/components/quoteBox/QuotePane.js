@@ -1,6 +1,6 @@
 import React from 'react';
 import OrderButton from '../OrderButton'
-import { BUY, SELL } from '../../constants'
+import { BUY } from '../../constants'
 import decimalRounder from '../../utils/decimalRounder'
 import './QuotePane.css'
 

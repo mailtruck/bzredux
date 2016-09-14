@@ -1,7 +1,6 @@
 import axios from 'axios'
 import { setMessage } from './messageActions'
-import { SET_QUOTE, SET_LOADING } from './types'
-import { ALERT } from '../constants'
+import { SET_QUOTE, SET_LOADING , ALERT } from '../constants'
 
 
 export function getQuote(symbol) {

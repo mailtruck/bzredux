@@ -1,5 +1,5 @@
 import quotes from './quotes'
-import * as types from '../actions/types'
+import { SET_QUOTE, SET_LOADING } from '../constants'
 
 describe('quotes reducer', () => {
   it('should handle initial state', () => {
@@ -24,14 +24,14 @@ describe('quotes reducer', () => {
 
     expect(
       quotes({quote:{}, loading: true}, {
-        type: types.SET_QUOTE,
+        type: SET_QUOTE,
         quote: ford
       }).quote).toEqual(ford)
 
 
     expect(
       quotes({quote:apple, loading: false}, {
-        type: types.SET_QUOTE,
+        type: SET_QUOTE,
         quote: ford
       }).quote).toEqual(ford)
   })
@@ -39,7 +39,7 @@ describe('quotes reducer', () => {
   it('should handle SET_LOADING', () => {
     expect(
       quotes({quote:{}, loading: true}, {
-        type: types.SET_LOADING,
+        type: SET_LOADING,
         loading: false
       }).loading).toEqual(false)
   })

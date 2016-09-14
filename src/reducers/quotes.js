@@ -1,4 +1,4 @@
-import { SET_QUOTE, SET_LOADING } from '../actions/types'
+import { SET_QUOTE, SET_LOADING } from '../constants'
 import { combineReducers } from 'redux'
 
 //   symbol: 'AAPL',
@@ -10,8 +10,6 @@ const quotes = combineReducers({
     quote,
     loading
 })
-
-
 
 function quote(state = {}, action) {
   switch (action.type) {

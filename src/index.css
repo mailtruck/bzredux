@@ -31,7 +31,7 @@ button:disabled {
 
 button:disabled:hover {
   color: #fff;
-  border-color: #fff;
+  border-color: #efefef;
   background:inherit;
   cursor:not-allowed;
 }

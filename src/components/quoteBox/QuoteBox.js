@@ -1,6 +1,6 @@
 import React from 'react';
-import QuotePane from '../../components/quoteBox/QuotePane'
-import Loading from '../../components/loading/Loading'
+import QuotePane from './QuotePane'
+import Loading from '../loading/Loading'
 import { BUY, SELL } from '../../constants'
 import './QuoteBox.css'
 
@@ -35,7 +35,8 @@ class QuoteBox extends React.Component{
     )
   }
 
-  quoteBoxInner(symbol, name, askPrice, bidPrice, quantity){
+  quoteBoxInner(symbol, name, askPrice, bidPrice, quantity) {
+    const quant = parseInt(quantity, 10)
     return (
       <span>
         <h1>{symbol}</h1>
@@ -43,11 +44,11 @@ class QuoteBox extends React.Component{
         <QuotePane
           type={BUY}
           price={askPrice}
-          quantity={parseInt(quantity)}/>
+          quantity={quant}/>
         <QuotePane
           type={SELL}
           price={bidPrice}
-          quantity={parseInt(quantity)}/>
+          quantity={quant}/>
         <input
           name="quantity"
           onChange={(e)=>this.onChange(e)}

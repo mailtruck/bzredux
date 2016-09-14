@@ -1,6 +1,5 @@
 import positions from './positions'
-import * as types from '../actions/types'
-import { BUY, SELL } from '../constants'
+import { SEND_ORDER, BUY, SELL } from '../constants'
 
 describe('positions reducer', () => {
   it('should handle initial state', () => {
@@ -25,7 +24,7 @@ describe('positions reducer', () => {
           quantity: 100
         }],
         {
-          type: types.SEND_ORDER,
+          type: SEND_ORDER,
           order: {
             type: SELL,
             symbol: 'AAPL',
@@ -51,7 +50,7 @@ describe('positions reducer', () => {
           quantity: 100
         }],
         {
-          type: types.SEND_ORDER,
+          type: SEND_ORDER,
           order: {
             type: SELL,
             symbol: 'F',
@@ -81,7 +80,7 @@ describe('positions reducer', () => {
             quantity: 100
           }],
           {
-            type: types.SEND_ORDER,
+            type: SEND_ORDER,
             order: {
               type: SELL,
               symbol: 'AAPL',
@@ -108,7 +107,7 @@ describe('positions reducer', () => {
             quantity: 100
           }],
           {
-            type: types.SEND_ORDER,
+            type: SEND_ORDER,
             order: {
               type: BUY,
               symbol: 'AAPL',
@@ -136,7 +135,7 @@ describe('positions reducer', () => {
             quantity: 100
           }],
           {
-            type: types.SEND_ORDER,
+            type: SEND_ORDER,
             order: {
               type: BUY,
               symbol: 'F',
@@ -163,7 +162,7 @@ describe('positions reducer', () => {
       expect(
         positions([],
           {
-            type: types.SEND_ORDER,
+            type: SEND_ORDER,
             order: {
               type: BUY,
               symbol: 'F',

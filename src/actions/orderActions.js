@@ -1,6 +1,5 @@
 import { setMessage } from './messageActions'
-import { SEND_ORDER } from './types'
-import { ALERT } from '../constants'
+import { SEND_ORDER, ALERT } from '../constants'
 import orderValidator from '../utils/orderValidator'
 
 /*

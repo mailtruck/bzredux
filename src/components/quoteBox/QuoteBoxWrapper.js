@@ -1,7 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import QuoteBox from './QuoteBox'
-import Loading from '../../components/loading/Loading'
 import { getQuote, setQuote, setLoading } from '../../actions/quoteActions'
 
 class QuoteBoxWrapper extends React.Component{

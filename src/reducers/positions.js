@@ -1,5 +1,4 @@
-import { SEND_ORDER } from '../actions/types'
-import { BUY, SELL } from '../constants'
+import { SEND_ORDER, BUY, SELL } from '../constants'
 
 import averagePurchasePrices from '../utils/averagePurchasePrices.js'
 import findIndex from 'lodash/findIndex'

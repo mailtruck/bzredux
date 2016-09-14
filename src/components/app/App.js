@@ -1,11 +1,9 @@
 import React, { Component } from 'react'
+import QuoteBoxWrapper from '../quoteBox/QuoteBoxWrapper'
+import PortfolioListWrapper from '../portfolio/PortfolioListWrapper'
+import MiddleBar from '../middleBar/MiddleBar'
+import MessagesListWrapper from '../messages/MessagesListWrapper'
 import './App.css'
-import { connect } from 'react-redux'
-
-import QuoteBoxWrapper from './quoteBox/QuoteBoxWrapper'
-import PortfolioListWrapper from '../components/portfolio/PortfolioListWrapper'
-import MiddleBar from '../components/middleBar/MiddleBar'
-import MessagesListWrapper from '../components/messages/MessagesListWrapper'
 
 class App extends Component {
   render() {
@@ -18,9 +16,6 @@ class App extends Component {
         <MessagesListWrapper/>
         <QuoteBoxWrapper/>
         <PortfolioListWrapper/>
-
-
-
 
       </div>
     );

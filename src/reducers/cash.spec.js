@@ -1,5 +1,5 @@
 import cash from './cash'
-import * as types from '../actions/types'
+import { SEND_ORDER } from '../constants'
 
 describe('cash reducer', () => {
   it('should handle initial state', () => {
@@ -12,7 +12,7 @@ describe('cash reducer', () => {
 
     expect(
       cash(100000, {
-        type: types.SEND_ORDER,
+        type: SEND_ORDER,
         order: {
           type: 'BUY',
           bidPrice:10,
@@ -23,7 +23,7 @@ describe('cash reducer', () => {
 
       expect(
         cash(999, {
-          type: types.SEND_ORDER,
+          type: SEND_ORDER,
           order: {
             type: 'SELL',
             bidPrice:1,

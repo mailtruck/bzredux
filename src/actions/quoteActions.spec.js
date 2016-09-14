@@ -1,15 +1,15 @@
-import * as types from './types'
-import * as actions from './quoteActions'
+import { SET_QUOTE } from '../constants'
+import { setQuote } from './quoteActions'
 
 describe ('quote actions', () => {
   it('setQuote should create SET_QUOTE action', () => {
-    expect(actions.setQuote({
+    expect(setQuote({
       symbol: "AAPL",
       name: "Apple",
       bidPrice: 105.52,
       askPrice: 105.55
     })).toEqual({
-      type: types.SET_QUOTE,
+      type: SET_QUOTE,
       quote: {
         symbol: "AAPL",
         name: "Apple",
