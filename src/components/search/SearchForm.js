@@ -41,7 +41,7 @@ class SearchForm extends React.Component {
           <input
             placeholder="symbol"
             value={symbol}
-            type="search"
+            type="text"
             name="symbol"
             min={1}
             onChange={(e)=>this.onChange(e)}/>

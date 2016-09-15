@@ -6,19 +6,19 @@
 
 .search-form input {
   margin-top: .5rem;
-  padding: .3rem;
+  padding: .3em;
+  padding-bottom: .4em;
   width: 4rem;
   border: solid 2px #777;
-  font-size:.4em;
-  height: 3em;
+  font-size:.6em;
+  height: 1.2em;
   outline: none;
-  border-radius: none;
 }
 
 .search-form button {
-font-size: .4em;
+font-size: .5em;
 border-left: none;
-line-height: 1.3rem;
-height: 3em;
+line-height: 1.1em;
+height: 2.6em;
 outline: none;
 }
