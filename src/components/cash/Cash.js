@@ -1,5 +1,6 @@
 import React from 'react';
 import decimalRounder from '../../utils/decimalRounder'
+import './Cash.css'
 
 class Cash extends React.Component {
   render() {

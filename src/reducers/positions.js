@@ -8,8 +8,14 @@ const initialState = [
   {
     name: 'Apple',
     symbol: 'AAPL',
-    purchasePrice: 123,
+    purchasePrice: 132.93,
     quantity: 100
+  },
+  {
+    name: 'Tesla Motors',
+    symbol: 'TSLA',
+    purchasePrice: 175.23,
+    quantity: 120
   }
 ]
 

@@ -14,14 +14,17 @@ class QuoteBox extends React.Component{
     this.onChange = this.onChange.bind(this);
   }
 
-  onChange(e){
-      this.setState({ [e.target.name]:e.target.value})
+  onChange(e) {
+    if (!isNaN(e.target.value)){
+      this.setState({[e.target.name]:e.target.value})
+    }
   }
 
-  quantity(){
+  quantity() {
     return this.refs.quantity.value
   }
-  render(){
+
+  render() {
     const { symbol, name, bidPrice, askPrice } = this.props.quote
     const { quantity } = this.state
     const { isLoading } = this.props
@@ -51,9 +54,11 @@ class QuoteBox extends React.Component{
           quantity={quant}/>
         <input
           name="quantity"
+          placeholder="quantity"
           onChange={(e)=>this.onChange(e)}
           value={quantity}
-          type="number"/>
+          type="text"
+          />
       </span>
     )
   }

@@ -1,0 +1,23 @@
+.search-form {
+  font-size:1.5rem;
+  float:left;
+  width: 50%
+}
+
+.search-form input {
+  margin-top: .5rem;
+  padding: .3rem;
+  width: 4rem;
+  border: solid 2px #777;
+  font-size:.4em;
+  height: 3em;
+  outline: none;
+}
+
+.search-form button {
+font-size: .4em;
+border-left: none;
+line-height: 1.3rem;
+height: 3em;
+outline: none;
+}

@@ -39,6 +39,7 @@ class SearchForm extends React.Component {
       <div className="search-form">
         <form onSubmit={(e)=>this.onSubmit(e, symbol)}>
           <input
+            placeholder="symbol"
             value={symbol}
             type="search"
             name="symbol"

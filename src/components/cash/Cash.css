@@ -1,0 +1,9 @@
+.cash {
+  float: right;
+  width: 50%;
+  padding: .3rem;
+  font-size:1.5rem;
+  line-height:2.3rem;
+  text-align: center;
+  box-sizing: border-box;
+}

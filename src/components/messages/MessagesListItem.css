@@ -4,7 +4,7 @@
   background: #efefef;
   text-align: center;
   font-weight: bold;
-  padding: .5rem 1rem;
+  padding: .5rem 1.5rem;
   border-top: solid 4px #ccc;
   box-sizing: border-box;
   line-height: 1.5rem;
@@ -22,7 +22,8 @@
   position: absolute;
   top: .1rem;
   right: .3rem;
-  color: #777
+  color: #777;
+  background: none;
 
 }
 
