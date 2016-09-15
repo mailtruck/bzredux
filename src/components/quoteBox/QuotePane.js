@@ -5,7 +5,6 @@ import decimalRounder from '../../utils/decimalRounder'
 import './QuotePane.css'
 
 class QuotePane extends React.Component{
-
   render(){
     const { type, price, quantity } = this.props
     return(

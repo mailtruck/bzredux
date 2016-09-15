@@ -44,14 +44,20 @@ class QuoteBox extends React.Component{
       <span>
         <h1>{symbol}</h1>
         <p>{name}</p>
-        <QuotePane
-          type={BUY}
-          price={askPrice}
-          quantity={quant}/>
-        <QuotePane
-          type={SELL}
-          price={bidPrice}
-          quantity={quant}/>
+
+          {/* There is a chance that the api returns a valid quote
+          without bid and ask price values. (GOIG) */}
+          { askPrice && bidPrice ? <span>
+            <QuotePane
+              type={BUY}
+              price={askPrice}
+              quantity={quant}/>
+            <QuotePane
+              type={SELL}
+              price={bidPrice}
+              quantity={quant}/>
+
+
         <input
           name="quantity"
           placeholder="quantity"
@@ -59,6 +65,8 @@ class QuoteBox extends React.Component{
           value={quantity}
           type="text"
           />
+          </span> : <p>Unavailable for purchase</p>
+        }
       </span>
     )
   }
